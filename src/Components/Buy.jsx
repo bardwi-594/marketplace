@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import Modal from "react-modal";
+import { connect } from "react-redux";
+import { removeItem} from "../actions/buyActions";
 
-export default class Buy extends Component {
+class Buy extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false
     };
   }
+
+  handleInput = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
 
   openModal = () => {
@@ -42,7 +48,7 @@ export default class Buy extends Component {
                 </div>
 
                 <div className="total-amt">
-                  <div className="final-amt">Total: <span>€</span> </div>
+                  <div className="final-amt">Total: <span>€</span> {buyItem.reduce((a, c) => a + c.price * c.count, 0)}</div>
                   <button className="button-checkout" onClick={this.openModal}>Buy</button>
                 </div>
 
@@ -108,3 +114,10 @@ export default class Buy extends Component {
            )
       }
 }
+
+export default connect(
+  (state) => ({
+    buyItem: state.buy.buyItem,
+  }),
+  { removeItem}
+)(Buy);
