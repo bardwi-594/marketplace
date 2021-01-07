@@ -51,11 +51,17 @@ header a {
 
 div.app-content {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 div.product-container {
  display: flex;
+ width:80%;
+}
+
+div.sidenav{
+  width:20%;
+  background-color: #ececec;
 }
 footer {
   grid-area: footer;
@@ -171,3 +177,64 @@ button.buybtn:hover, button.buybtn:focus{
   flex: 1 1;
   margin: 1rem;
 }
+
+
+
+/*******Buy Section *******/
+
+div.product-image img{
+  width:30%;
+}
+
+div.list-item {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+
+div.total-amt{
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+div.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+button.button.remove-item {
+  padding: 10px 20px; 
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: none;
+}
+
+div.final-amt {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.total-amt button.button-checkout {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #000000;
+  cursor: pointer;
+  color: #ffffff;
+  border: 3px solid #000000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+button.button-checkout:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+

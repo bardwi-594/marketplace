@@ -2,13 +2,9 @@ import React, { Component } from 'react'
 import { withRouter, Link } from "react-router-dom";
 
 export default class Products extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          product: null,
-        };
-      }
+   
     render() {
+
         return (
             <div className="product-wrapper">
                 <ul className="product-list">
@@ -26,7 +22,7 @@ export default class Products extends Component {
                                
                                 <div className="price">
                                     <div className="prices"><span>€</span>{product.price}</div>
-                                    <button className="button buybtn">Buy</button>
+                                    <button onClick={() => this.props.handleBuy(product)} className="button buybtn">Buy</button>
                                 </div>
                             </div>
                         </li>
