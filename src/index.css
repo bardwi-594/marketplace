@@ -218,8 +218,8 @@ button.button.remove-item {
 }
 
 div.final-amt {
-  font-weight: 600;
-  font-size: 2rem;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 .total-amt button.button-checkout {
