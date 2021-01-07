@@ -15,7 +15,9 @@ export default class Buy extends Component {
                       <div>{item.title}</div>
                         <div className="total">
                           <p>€{(item.price)} </p> 
-                          <button className="button remove-item" >
+                          <button className="button remove-item" 
+                             onClick={() => this.props.removeItem(item)}
+                          >
                           Remove
                           </button>
                         </div>

@@ -29,6 +29,13 @@ class Home extends Component {
     
   }
 
+  removeItem = (product) => {
+    const buyItem = this.state.buyItem.slice();
+    this.setState({
+      buyItem: buyItem.filter((x) => x._id !== product._id),
+    });
+  };
+
   
   render() {
     return (
@@ -44,7 +51,7 @@ class Home extends Component {
                 <Products products={this.state.products} handleBuy={this.handleBuy}/>
               </div>
               <div className="sidenav"> 
-                <Buy buyItem={this.state.buyItem} />
+                <Buy buyItem={this.state.buyItem} removeItem={this.removeItem}/>
             </div>
             </div>
     
