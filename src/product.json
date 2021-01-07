@@ -5,21 +5,21 @@
             "image": "/images/product1.png",
             "title": "Marble Olive Butter Soap",
             "description": "Inspired from Turkish Art from EBRU, Marble Olive Butter Soap",
-            "price": 10.50
+            "price": 10
         },
         {
             "_id": "soap2",
             "image": "/images/product2.png",
             "title": "Indigo Power Bathing Bars",
             "description": "The power of this Blue Dye is embedded in our rich culture used in dzeing fabric clothes since ages. Found in African Japanese Indonesian culture too. Made with the goodness of Cocoa Butter & Olive Oil tea infused. Our soaps are an artistic presentation inspired from different art, craft and food",
-            "price": 11.50
+            "price": 11
         },
         {
             "_id": "soap3",
             "image": "/images/product3.png",
             "title": "Orthodox Plain Tea Soap",
             "description": "With goodness of tea, basil & peppermint",
-            "price": 8.20
+            "price": 8
         },
         {
             "_id": "soap4",
@@ -47,14 +47,14 @@
             "image": "/images/product7.png",
             "title": "Chamomile Flower Soap & French Green Clay Soap",
             "description": "Our soaps are always Superfatted which means it‘s loaded with extra amount of oil or butter",
-            "price": 7.50
+            "price": 7
         },
         {
             "_id": "soap8",
             "image": "/images/product8.png",
             "title": "Pumpkin Soap with Lavender Essentail oil",
             "description": "Home cooked with Coconut & Canola oil",
-            "price": 10.20
+            "price": 10
         },
 
         {

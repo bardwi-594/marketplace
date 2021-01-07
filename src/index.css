@@ -149,3 +149,25 @@ button.buybtn:hover, button.buybtn:focus{
   background-color: #000000;
   color: #ffffff;
 }
+
+/*******Product Page ********/
+
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+  padding: 1rem;
+  margin: 1rem
+}
+
+.product-details img {
+  max-height: 100vh;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.product-description {
+  flex: 1 1;
+  margin: 1rem;
+}
