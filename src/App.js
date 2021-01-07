@@ -1,37 +1,30 @@
-import React,{Component}from 'react';
-import Products from './Components/Products';
-import data from "./product.json";
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      products: data.products,
-    }
-  }
-
-  render() {
+import React from "react";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
+import Home from "./Components/Home";
+import Product from "./Components/Product";
+function App() {
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <div className="header-navbar">
-          <a href="/">Marketplace</a>
-          </div>
-      </header>
-      <main>
-        <div className="app-content"> 
-          <div className="product-container">
-            <Products products={this.state.products}/>
-          </div>
-        </div>
+   
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={Home}
+          />
 
-      </main>
-      <footer>
-         Copyright 2021 Marketplace
-      </footer>
-    </div>
+          <Route
+            exact
+            path="/product/:productid"
+            component={Product}
+          />
+          
+          
+        </Switch>
+      </BrowserRouter>
+
   );
-}
 }
 
 export default App;
+

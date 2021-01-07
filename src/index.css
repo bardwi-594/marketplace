@@ -55,7 +55,7 @@ div.app-content {
 }
 
 div.product-container {
-  flex: 3 60rem;
+ display: flex;
 }
 footer {
   grid-area: footer;
