@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "_id": "soap1",
+            "image": "/images/product1.png",
+            "title": "Marble Olive Butter Soap",
+            "description": "Inspired from Turkish Art from EBRU, Marble Olive Butter Soap",
+            "price": 10
+        },
+        {
+            "_id": "soap2",
+            "image": "/images/product2.png",
+            "title": "Indigo Power Bathing Bars",
+            "description": "The power of this Blue Dye is embedded in our rich culture used in dzeing fabric clothes since ages. Found in African Japanese Indonesian culture too. Made with the goodness of Cocoa Butter & Olive Oil tea infused. Our soaps are an artistic presentation inspired from different art, craft and food",
+            "price": 11
+        },
+        {
+            "_id": "soap3",
+            "image": "/images/product3.png",
+            "title": "Orthodox Plain Tea Soap",
+            "description": "With goodness of tea, basil & peppermint",
+            "price": 8
+        },
+        {
+            "_id": "soap4",
+            "image": "/images/product4.png",
+            "title": "Sprinkled Cupcake Soap with Orthodox Tea",
+            "description": "For all the Chai lovers. They are freshly made with olive & coconut oil. Scented with Basil & Peppermint Essential Oil",
+            "price": 9
+        },
+        {
+            "_id": "soap5",
+            "image": "/images/product5.png",
+            "title": "Fully Charcoal Soap with Basil Essential Oil & Cedarwood Essential Oil",
+            "description": "Charcoal soap has many benefits. It is suitable for all skin types. It“s ability to absorb extra oil & dirt from oily skin and nourishes for those with dry skin",
+            "price": 9
+        },
+        {
+            "_id": "soap6",
+            "image": "/images/product6.png",
+            "title": "Orthodox Tea Soap with Coffee Grounds",
+            "description": "Very minty Tea soap with Coffee grounds. For Normal to Oily Skin. Naturally coloured and exfoliating bar, scented with essential oils",
+            "price": 10
+        },
+        {
+            "_id": "soap7",
+            "image": "/images/product7.png",
+            "title": "Chamomile Flower Soap & French Green Clay Soap",
+            "description": "Our soaps are always Superfatted which means it‘s loaded with extra amount of oil or butter",
+            "price": 7
+        },
+        {
+            "_id": "soap8",
+            "image": "/images/product8.png",
+            "title": "Pumpkin Soap with Lavender Essentail oil",
+            "description": "Home cooked with Coconut & Canola oil",
+            "price": 10
+        },
+
+        {
+            "_id": "soap9",
+            "image": "/images/product9.png",
+            "title": "Sprinkled Pastry Tea Soap",
+            "description": "Scented with Basil & Peppermint Essential oil. We are loving the pastels, obtained from natural colours. Tea is packed with Antioxidants. Made with plant based oils. Superfatted by 5%",
+            "price": 9
+        }
+    ]
+}
