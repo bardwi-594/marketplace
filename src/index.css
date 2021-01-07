@@ -31,6 +31,7 @@ header.app-header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 div.header-navbar{
@@ -60,8 +61,11 @@ div.product-container {
 }
 
 div.sidenav{
-  width:20%;
+  width: 20%;
   background-color: #ececec;
+  position: fixed;
+  right: 0;
+  height: 100%;
 }
 footer {
   grid-area: footer;
@@ -287,6 +291,10 @@ div.close-btn {
   text-align: right;
 }
 
+div.close-btn button {
+  cursor: pointer;
+}
+
 button.button-checkout {
   text-align: center;
   padding: 10px 20px;
@@ -300,9 +308,49 @@ button.button-checkout {
 }
 
 div.checkout-details div {
-  margin: 1rem;
+  margin: 0 1rem;
   padding-bottom: 1rem;
   font-size: 1.2rem;
   border-bottom: 1px solid #c0c0c0;
 
 } 
+
+
+/*****Loader in Home Page ******/
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #b9c4cc;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -76px 0 0 -76px;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.animate-itemlist {
+  position: relative;
+  -webkit-animation-name: animate-itemlist;
+  -webkit-animation-duration: 1s;
+  animation-name: animate-itemlist;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animate-itemlist {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animate-itemlist { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
