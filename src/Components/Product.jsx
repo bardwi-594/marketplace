@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { buyProduct} from "../actions/buyActions";
 
-export default class Product extends Component {
+class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          
-      }
+        }
     }
+   
     render() {
         const products = this.props.location.state;
 
@@ -27,7 +29,10 @@ export default class Product extends Component {
                                   <p>{products.product.description}</p>
                                    <div className="product-price">
                                        <div className="prices"><span>€</span>{products.product.price}</div>
-                                       <button className="button buybtn" >Buy </button>
+                                       <button 
+                                       onClick={() => this.props.buyProduct(products.product)} 
+                                       className="button buybtn" >Buy 
+                                       </button>
                                    </div>
                                 </div>
                            </div>
@@ -39,3 +44,7 @@ export default class Product extends Component {
         )
     }
 }
+export default connect(
+    (state) => ({ products: state.products.productLists}),
+    {buyProduct,
+    })(Product);

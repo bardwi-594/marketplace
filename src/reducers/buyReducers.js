@@ -1,6 +1,5 @@
 import { BUY_PRODUCT, REMOVE_PRODUCT} from "../types";
 
-
 export const buyReducer = (
     state = { buyItem: JSON.parse(localStorage.getItem("buyItem") || "[]") },
     action

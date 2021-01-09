@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const shortid = require("shortid");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -23,11 +24,59 @@ const Product = mongoose.model(
    })
 );
 
-
 app.get("/api/products", async(req, res) => {
-    const products = await Product.find({});
-    res.send(products);
+  const products = await Product.find({});
+  res.send(products);
 });
+
+const Order = mongoose.model(
+    "order",
+    new mongoose.Schema({
+      _id: {
+        type: String,
+        default: shortid.generate,
+      },
+        name: String,
+        email: String,
+        address: String,
+        mobile:String,
+        total: Number,
+        buyItem: [
+          {
+            _id: String,
+            title: String,
+            price: Number,
+          },
+        ],
+      },
+      {
+        timestamps: true,
+      }
+    )
+  );
+
+app.post("/api/orders", async (req, res) => {
+    if (
+      !req.body.name ||
+      !req.body.email ||
+      !req.body.address ||
+      !req.body.mobile ||
+      !req.body.total ||
+      !req.body.buyItem
+    ) {
+      return res.send({ message: "Fields cannot be Empty." });
+    }
+    const order = await Order(req.body).save();
+    res.send(order);
+});
+
+app.get("/api/orders", async (req, res) => {
+    const orders = await Order.find({});
+    res.send(orders);
+});
+
+
+
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => console.log("serve at http://localhost:8000"));

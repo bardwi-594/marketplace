@@ -354,3 +354,78 @@ div.checkout-details div {
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
+
+
+/********Order Page *******/
+div.order-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-shadow: 7px 7px 20px #0000000D;
+  border-radius: 20px;
+  margin: 50px;
+  padding: 40px;
+  background-color: white;
+}
+
+div.order-detail ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  color: #444444;
+}
+
+div.order-detail ul {
+  padding-inline-start: 0px;
+}
+
+div.order-detail ul li div:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #000000;
+}
+
+div.order-detail ul li div:first-child {
+  text-align: left;
+  font-weight: 400;
+  color: #444444;
+}
+
+div.order-detail ul li div{
+  flex-basis: calc(50% - 0.4em);
+}
+
+div.order-detail h2 {
+  color: #7b858a;
+  text-align: center;
+}
+
+div.goback-btn a{
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  color: #000000;
+  border: 2px solid #000000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+div.goback-btn {
+  text-align: center;
+}
+h3.order-message {
+  color: #22803f;
+}
+
+main.order-page {
+  background-color: #e4f0f1;
+}
+
+
+
