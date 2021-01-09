@@ -3,6 +3,8 @@ import { BUY_PRODUCT, REMOVE_PRODUCT} from "../types";
 export const buyProduct= (product) => (dispatch, getState) => {
     const buyItem = getState().buy.buyItem.slice();
     let itemExists = false;
+    
+    
     buyItem.forEach(item=>{
       if(item) {
         itemExists = true;
@@ -18,9 +20,10 @@ export const buyProduct= (product) => (dispatch, getState) => {
     localStorage.setItem("buyItem", JSON.stringify(buyItem));
   };
 
+  
+  /**Remove an item actions**/
   export const removeItem = (product) => (dispatch, getState) => {
-     const buyItem = getState().buy.buyItem.slice().filter((item) => item._id !== product._id);
-    
-     dispatch({ type: REMOVE_PRODUCT, payload: { buyItem } });
+    const buyItem = getState().buy.buyItem.slice().filter((item) => item._id !== product._id);
+    dispatch({ type: REMOVE_PRODUCT, payload: { buyItem } });
     localStorage.setItem("buyItem", JSON.stringify(buyItem));
   };
