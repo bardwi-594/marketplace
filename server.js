@@ -70,12 +70,52 @@ app.post("/api/orders", async (req, res) => {
     res.send(order);
 });
 
+
+
 app.get("/api/orders", async (req, res) => {
     const orders = await Order.find({});
     res.send(orders);
 });
 
 
+var cors = require('cors')
+app.use(cors())
+
+
+const User = mongoose.model(
+  "user",
+  new mongoose.Schema({
+    _id: {
+      type: String,
+      default: shortid.generate,
+    },
+      email: String,
+      password: String,
+      usertype: String
+
+    }
+  )
+);
+
+app.post("/api/login", async (req, res) => {
+  User.findOne({
+    email: req.body.email,
+    password: req.body.password,
+    usertype: req.body.usertype
+  }, function(err, user) {
+    if (user) {
+      res.send(user)
+    }
+    else {
+      res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+     }
+  });
+});
+
+app.get("/api/users", async (req, res) => {
+  const user = await User.find({});
+  res.send(user);
+});
 
 
 const port = process.env.PORT || 8000;
