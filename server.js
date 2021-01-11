@@ -82,8 +82,8 @@ var cors = require('cors')
 app.use(cors())
 
 
-const Login = mongoose.model(
-  "login",
+const User = mongoose.model(
+  "user",
   new mongoose.Schema({
     _id: {
       type: String,
@@ -98,14 +98,23 @@ const Login = mongoose.model(
 );
 
 app.post("/api/login", async (req, res) => {
-  if (
-    !req.body.email ||
-    !req.body.password 
-  ) {
-    return res.send({ message: "Fields cannot be Empty." });
-  }
-  const login = await Login(req.body).save();
-  res.send(login);
+  User.findOne({
+    email: req.body.email,
+    password: req.body.password,
+    usertype: req.body.usertype
+  }, function(err, user) {
+    if (user) {
+      res.send(user)
+    }
+    else {
+      res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+     }
+  });
+});
+
+app.get("/api/users", async (req, res) => {
+  const user = await User.find({});
+  res.send(user);
 });
 
 

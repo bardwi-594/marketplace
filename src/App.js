@@ -36,7 +36,7 @@ function App() {
           />
           <Route
             exact
-            path="/orderslist"
+            path="/orderlist"
             component={Orderlist}
           />
           

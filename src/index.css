@@ -427,6 +427,24 @@ main.order-page {
   background-color: #e4f0f1;
 }
 
+/****Orderslist Admin *****/
+.orders {
+  width: 100%;
+  padding: 10px;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #c0c0c0;
+}
+tbody > tr:nth-child(even) {
+  background-color: #b9c4cc;
+}
+td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+
 /******Login*******/
 
 div.login_container {
@@ -438,7 +456,7 @@ div.login_container {
   flex-direction: column;
 }
 
-div.middle {
+div.orderlist{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -486,6 +504,24 @@ button.button-login {
 
 div.text_container h2 {
   color:#444444;
+}
+
+div.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 25px;
+  padding-bottom: 8%;
+  padding-top: 2%;
+}
+
+form.login a {
+  text-decoration: none;
+  color: #148fb5;
+  font-size: 0.8rem;
+  margin-top: 5%;
 }
 
 

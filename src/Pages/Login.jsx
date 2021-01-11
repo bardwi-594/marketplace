@@ -7,7 +7,7 @@ class Login extends Component {
         this.state = {
           password: "",
           email: "",
-          loading: false 
+          error: '',
         };
       }
     handleChange=(e)=> {
@@ -23,24 +23,26 @@ class Login extends Component {
         if (!(email && password)) {
             return;
         }
-
         userService.login(email, password)
             .then(
-                () => {this.props.history.push("/orderlist");
+                user => {
+                    const { from } = this.props.location.state || { from: { pathname: "/orderlist" } };
+                    this.props.history.push(from);
                 },
-            
+                error => this.setState({ error, loading: false })
             );
-    }
+
+        }
   
     render() {
-        const { email, password, loading, } = this.state;
-      return (
+        const { email, password } = this.state;
+        return (
         <div className="login_wrapper">
            <div className="login_container">
-            <div className="middle">
-              <div className="text_container">
+                <div className="middle">
+                <div className="text_container">
                   <h2>Login</h2>
-              </div>
+                </div>
                 <form name="form" onSubmit={this.handleSubmit} className="login">
                     <div className="form-group">
                         <input type="text" className="form-control" name="email"  value={email} onChange={this.handleChange} 
@@ -51,9 +53,10 @@ class Login extends Component {
                         placeholder="Enter Password" required/>
                     </div>
                     <button className="button-login" type="submit"> Login</button>
+                      <a href="/">click to homepage</a>
                 </form>
+                </div>
             </div>
-          </div>
         </div>
       );
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import Products from "./Products";
-import Product from "./Product";
 import Home from "../Pages/Home";
 import { configure, shallow} from 'enzyme';
 import { Provider } from "react-redux";
