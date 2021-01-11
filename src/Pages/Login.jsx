@@ -29,7 +29,7 @@ class Login extends Component {
                     const { from } = this.props.location.state || { from: { pathname: "/orderlist" } };
                     this.props.history.push(from);
                 },
-                error => this.setState({ error, loading: false })
+                error => this.setState({ error })
             );
 
         }
