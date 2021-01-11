@@ -10,6 +10,7 @@ function login(email, password) {
     };
 
     return fetch('http://localhost:8000/api/login', requestOptions)
+    .then(handleResponse)
         .then(user => {
            if (user) {
             user.authdata = window.btoa(email + ':' + password);
@@ -21,6 +22,14 @@ function login(email, password) {
 }
 function logout() {
     localStorage.removeItem('user');
+}
+
+function handleResponse(response) {
+    return response.text().then(text => {
+        const data = text && JSON.parse(text);
+        console.log(data)
+        return data;
+    });
 }
 
 
