@@ -16,7 +16,7 @@ class Buy extends Component {
       mobile: ""
     };
   }
-  /****Creates an order  *****/
+  /****Creates an order  */
   ordersHandler= (event) => {
     event.preventDefault();
     const order= {
@@ -84,7 +84,7 @@ class Buy extends Component {
               </div>
                 <Modal isOpen={this.state.showModal}
                   contentLabel="Enter Personal Details"
-                  className="Modal"
+                  className="modal"
                   overlayClassName="Overlay"
                   onRequestClose={this.closeModal}
                   >

@@ -244,7 +244,7 @@ button.button-checkout:focus {
 
 /******* Form Modal Checkout buy wizard*******/
 
-.Modal {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -426,6 +426,105 @@ h3.order-message {
 main.order-page {
   background-color: #e4f0f1;
 }
+
+/****Orderslist Admin *****/
+.orders {
+  width: 100%;
+  padding: 10px;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #c0c0c0;
+}
+tbody > tr:nth-child(even) {
+  background-color: #b9c4cc;
+}
+td {
+  padding: 15px;
+}
+th {
+  text-align: left;
+}
+
+/******Login*******/
+
+div.login_container {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.orderlist{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+}
+
+div input.form-control{
+  border-radius: 3px;
+  text-align: left;
+  font-size: .8rem;
+  padding: 12px 20px;
+  width: 100%;
+
+}
+
+div.form-group {
+  width: 100%;
+  margin-bottom: 10%;
+  display: flex;
+}
+
+button.button-login {
+  font-weight: 300;
+  letter-spacing: .05em;
+  background-color: #148fb5;
+  border: 1px solid #148fb5;
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  padding: 12px 20px;
+  cursor: pointer;
+
+}
+
+div.text_container h2 {
+  color:#444444;
+}
+
+div.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 25px;
+  padding-bottom: 8%;
+  padding-top: 2%;
+}
+
+form.login a {
+  text-decoration: none;
+  color: #148fb5;
+  font-size: 0.8rem;
+  margin-top: 5%;
+}
+
+
 
 
 
