@@ -25,8 +25,9 @@ class Orderlist extends Component {
                </div>
             </header>
             <main>
+                
                 {!orders && admin?(
-                <div className="loader">Orders</div>
+                <div className="loader"></div>
                 ) : (
                 <div className="orderlist">
                    <h2>Orders List</h2>
@@ -56,7 +57,7 @@ class Orderlist extends Component {
                             ))}
                           </td>
                           <td>{moment(order.createdAt).format("DD-MM-YYYY HH:MM:SS")}</td>
-                          <td> {order.total}</td>
+                          <td> <span>€</span>{order.total}</td>
                           <td>{order.name}</td>
                           <td>{order.email}</td>
                           <td>{order.mobile}</td>

@@ -2,9 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const shortid = require("shortid");
 const mongoose = require("mongoose");
+var cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors())
 
 mongoose.connect("mongodb+srv://market:12345@cluster0.cgwxl.mongodb.net/onlinestore?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -78,9 +80,6 @@ app.get("/api/orders", async (req, res) => {
 });
 
 
-var cors = require('cors')
-app.use(cors())
-
 
 const User = mongoose.model(
   "user",
@@ -98,6 +97,7 @@ const User = mongoose.model(
 );
 
 app.post("/api/login", async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3002');
   User.findOne({
     email: req.body.email,
     password: req.body.password,
@@ -112,9 +112,9 @@ app.post("/api/login", async (req, res) => {
   });
 });
 
-app.get("/api/users", async (req, res) => {
-  const user = await User.find({});
-  res.send(user);
+app.get("/api/login", async (req, res) => {
+  const users = await User.find({});
+  res.send(users);
 });
 
 
