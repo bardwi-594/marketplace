@@ -97,20 +97,22 @@ const User = mongoose.model(
 );
 
 app.post("/api/login", async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3002');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   User.findOne({
-    email: req.body.email,
-    password: req.body.password,
-    usertype: req.body.usertype
-  }, function(err, user) {
-    if (user) {
-      res.send(user)
+    email: req.body.email
+  }).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
     }
-    else {
-      res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
-     }
+    if (user) {
+      res.status(200).send({ message: "Success!" });
+      return;
+    }
   });
 });
+
+    
 
 app.get("/api/login", async (req, res) => {
   const users = await User.find({});
