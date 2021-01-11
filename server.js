@@ -70,12 +70,43 @@ app.post("/api/orders", async (req, res) => {
     res.send(order);
 });
 
+
+
 app.get("/api/orders", async (req, res) => {
     const orders = await Order.find({});
     res.send(orders);
 });
 
 
+var cors = require('cors')
+app.use(cors())
+
+
+const Login = mongoose.model(
+  "login",
+  new mongoose.Schema({
+    _id: {
+      type: String,
+      default: shortid.generate,
+    },
+      email: String,
+      password: String,
+      usertype: String
+
+    }
+  )
+);
+
+app.post("/api/login", async (req, res) => {
+  if (
+    !req.body.email ||
+    !req.body.password 
+  ) {
+    return res.send({ message: "Fields cannot be Empty." });
+  }
+  const login = await Login(req.body).save();
+  res.send(login);
+});
 
 
 const port = process.env.PORT || 8000;

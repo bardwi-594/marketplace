@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./Pages/Home";
 import Product from "./Components/Product";
 import Order from "./Pages/Order";
+import Login from "./Pages/Login";
+import Orderlist from "./Pages/Orderlist";
 
 function App() {
   return (
@@ -26,6 +28,16 @@ function App() {
             exact
             path="/order"
             component={Order}
+          />
+          <Route
+            exact
+            path="/login"
+            component={Login}
+          />
+          <Route
+            exact
+            path="/orderslist"
+            component={Orderlist}
           />
           
         </Switch>

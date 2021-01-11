@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Products from "../Components/Products";
 import Buy from "../Components/Buy";
-import data from "../product.json";
 
 class Home extends Component {
- render() {
+render() {
     return (
         <div className="app-container">
           <header className="app-header">

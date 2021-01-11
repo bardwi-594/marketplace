@@ -54,6 +54,6 @@ render() {
 export default connect(
   (state) => ({ products: state.products.productLists}),
     {
-    getProducts,
-    buyProduct,
-})(Products);
+      getProducts,
+      buyProduct,
+    })(Products);

@@ -6,7 +6,7 @@ export const buyProduct= (product) => (dispatch, getState) => {
     
     
     buyItem.forEach(item=>{
-      if(item) {
+    if(item) {
         itemExists = true;
       }
     });

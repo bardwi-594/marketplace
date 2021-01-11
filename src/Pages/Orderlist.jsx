@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Profile extends Component {
+class Orderlist extends Component {
     render() {
         return (
             <div>
@@ -10,5 +10,5 @@ export class Profile extends Component {
     }
 }
 
-export default Profile
+export default Orderlist;
 
